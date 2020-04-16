@@ -1,0 +1,25 @@
+
+
+  <div class="heading">
+    <button mat-raised-button (click)='openDialog()'>New Restaurant</button>
+    <h2>My Restaurants</h2>
+</div>
+
+<div class="cards">
+    <mat-card (click)='openRestaurant(item)' *ngFor="let item of rest" class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-card-subtitle>{{item.type}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+           {{item.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+</div>
+
+
+
+

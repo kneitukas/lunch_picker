@@ -1,0 +1,17 @@
+
+
+.form {
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    button {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    a {
+        margin-top: 1rem;
+    }
+}

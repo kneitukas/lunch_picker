@@ -1,0 +1,20 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav-content>
+    <mat-toolbar  color="primary">
+
+      <mat-nav-list>
+        <a [routerLink]="['/menus']" routerLinkActive="router-link-active"  mat-list-item>Menus of the day</a>
+        <a [routerLink]="['/restaurants']" routerLinkActive="router-link-active"  mat-list-item >My Restaurants</a>
+      </mat-nav-list>
+      <!-- <span>restaurantSPA</span> -->
+      <div>
+        <span  class="sign-out" [matMenuTriggerFor]="menu">{{user}}</span>
+        <mat-menu #menu="matMenu">
+          <button  (click)="signOut()" mat-menu-item>Sign Out</button>
+        </mat-menu>
+      </div> 
+    </mat-toolbar>
+  <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

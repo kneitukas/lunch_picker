@@ -1,0 +1,37 @@
+.heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+
+    button {
+        position: absolute;
+        left: 2rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0 ; 
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+
+}
+
+.example-card {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 28%;
+     height: 200px;
+  }
+
+  .image {
+      width: 300px;
+  }

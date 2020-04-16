@@ -1,0 +1,23 @@
+<form [formGroup]="restaurant" (ngSubmit)='close()'>
+  <h2>New Restaurant</h2>
+  <div class="fields">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" autocomplete="off" matInput type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <input formControlName="type" autocomplete="off" matInput type="text" />
+    </mat-form-field>  
+    <mat-form-field appearance="outline">
+      <mat-label>Photo Url</mat-label>
+      <input formControlName="photo" autocomplete="off" matInput type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" autocomplete="off" matInput type="text" />
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button >Create</button>
+</form>

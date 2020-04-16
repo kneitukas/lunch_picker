@@ -1,0 +1,24 @@
+<!-- <h2>{{rest.name}}</h2>
+<h3>{{rest.type}}</h3>
+
+<h2>Menus of the day</h2> -->
+
+<!-- <div class="days">
+    <mat-card [ngClass]="{highlight: i == weekday}" *ngFor="let item of menus; let i = index">
+        {{item.day}}
+    </mat-card> 
+</div> -->
+
+<div class="menus-wrapper">
+    <h2>Menus</h2>
+    <button mat-raised-button (click)="newMenuDialog()">New Menu</button>
+<div class="menus">
+    <mat-card class="menu" *ngFor="let item of unasignedMenus">
+        <mat-icon (click)='edit()' class="edit-menu">create</mat-icon>
+        <h3 *ngFor="let s of item">{{s}}</h3>
+    </mat-card>
+</div>
+
+</div>
+
+
