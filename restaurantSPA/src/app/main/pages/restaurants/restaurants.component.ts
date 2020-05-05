@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NewRestaurantDialogComponent } from '../../components/new-restaurant-dialog/new-restaurant-dialog.component';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
+import { RestaurantResponse } from 'src/app/models/restaurant.model';
 
 @Component({
   templateUrl: './restaurants.component.html',
@@ -32,8 +33,8 @@ rest : any = []
     } );
   }
 
-  openRestaurant(rest: any) {
-   this.router.navigateByUrl(`/restaurants/${rest.ID}`)
+  openRestaurant(rest: RestaurantResponse) {
+   this.router.navigateByUrl(`/restaurants/${rest.id}`)
   }
 
   ngOnDestroy() {

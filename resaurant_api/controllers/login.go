@@ -12,7 +12,7 @@ import (
 
 type LoginResp struct {
 	Id    uint32 `json:"id"`
-	Token string `json: "token"`
+	Token string `json:"token"`
 	Email string `json:"email"`
 }
 

@@ -1,5 +1,6 @@
 
 <form>
+    <h2>New Menu</h2>
     <mat-form-field *ngFor="let control of fields.controls; index as i">
         <input [formControl]='fields.controls[i]' type="text" matInput>
         <button class="clear-icon" (click)='delete(i)' mat-icon-button>

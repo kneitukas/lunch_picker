@@ -11,11 +11,11 @@ import (
 )
 
 type User struct {
-	ID        uint32    `gorm:"primary_key;auto_increment";json:"id"`
-	Email     string    `gorm:"size:100;not null;unique";json:"email"`
-	Password  string    `gorm:"size:100;not null;"json:",omitempty"`
-	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP;"json:",omitempty"`
-	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP;"json:",omitempty"`
+	ID        uint32    `gorm:"primary_key;auto_increment" json:"id"`
+	Email     string    `gorm:"size:100;not null;unique" json:"email"`
+	Password  string    `gorm:"size:100;not null;" json:",omitempty"`
+	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP;" json:",omitempty"`
+	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP;" json:",omitempty"`
 }
 
 func (u *User) BeforeSave() error {

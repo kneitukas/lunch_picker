@@ -1,7 +1,7 @@
 import { Time } from '@angular/common';
 
 export interface RestaurantResponse {
-    ID: number;
+    id: number;
     Name: string;
     Type: string;
     CreatedAt: Time

@@ -3,7 +3,6 @@ package models
 import (
 	"errors"
 	"html"
-	"log"
 	"strings"
 	"time"
 
@@ -11,14 +10,14 @@ import (
 )
 
 type Restaurant struct {
-	ID       uint32 `gorm:"primary_key;auto_increment";json:"id"`
-	Author   User   `gorm:"foreignKey:AuthorID;"json:"-"`
-	AuthorID uint32 `gorm:"not null" json:"author_id"`
-	// Menus     []Menu    `json:"menus"`
-	Name      string    `gorm:"size:100;not null;"json:"name"`
-	Type      string    `gorm:"size:100;not null;"json:"type"`
-	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP;"json:",omitempty"`
-	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP;"json:",omitempty"`
+	ID        uint32    `gorm:"primary_key;auto_increment" json:"id"`
+	Author    User      `gorm:"foreignKey:AuthorID" json:"-"`
+	AuthorID  uint32    `gorm:"not null" json:"author_id"`
+	Menus     []Menu    `json:"menus"`
+	Name      string    `gorm:"size:100;not null" json:"name"`
+	Type      string    `gorm:"size:100;not null" json:"type"`
+	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:",omitempty"`
+	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:",omitempty"`
 }
 
 func (r *Restaurant) Prepare() {
@@ -69,10 +68,9 @@ func (r *Restaurant) GetUserRestaurants(db *gorm.DB, uid uint32) (*[]Restaurant,
 }
 
 func (r *Restaurant) FindRestaurantByID(db *gorm.DB, rid uint64) (*Restaurant, error) {
-	// rest := Restaurant{}
-	log.Print(rid)
-	if err := db.Debug().Model(Restaurant{}).First(&r, rid).Error; err != nil {
+	rest := Restaurant{}
+	if err := db.Debug().Model(Restaurant{}).First(&rest, rid).Error; err != nil {
 		return &Restaurant{}, err
 	}
-	return r, nil
+	return &rest, nil
 }

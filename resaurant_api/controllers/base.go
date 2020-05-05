@@ -36,6 +36,6 @@ func (b *Base) run(port string, handler http.Handler) {
 }
 
 func (b *Base) PerformMigrations() {
-	b.Db.Debug().AutoMigrate(&models.User{}, &models.Restaurant{})
+	b.Db.Debug().AutoMigrate(&models.User{}, &models.Restaurant{}, &models.Menu{})
 	b.Db.Debug().Model(&models.Restaurant{}).AddForeignKey("author_id", "users(id)", "CASCADE", "CASCADE")
 }

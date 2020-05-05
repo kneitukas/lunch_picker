@@ -18,6 +18,7 @@ export class ApiService {
     }
 
     getRestaurantById(id) {
+        console.log(id)
         return this.http.get(this.url + `/restaurant/${id}`)
     }
 
